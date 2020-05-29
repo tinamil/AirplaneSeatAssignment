@@ -49,7 +49,8 @@ Graph process_graph(std::vector<std::string> graph_strings) {
             if (col2 < 0 || col2 >= vertex_indices[row2].size()) continue;
             if (vertex_indices[row2][col2] == -1) continue;
             auto index2 = vertex_indices[row2][col2];
-            adjacency_matrix[index1][index2] = 1;
+            if (index1 != index2)
+              adjacency_matrix[index1][index2] = 1;
           }
         }
       }
