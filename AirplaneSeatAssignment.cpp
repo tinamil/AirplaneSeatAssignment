@@ -90,16 +90,7 @@ void Display(std::vector<std::string> graph_strings, std::vector<bool> included_
 static void usage(const char* progname)
 {
   using namespace std;
-  cerr << "Usage: " << progname << "[options] [inputfile]" << endl;
-  cerr << "   where" << endl;
-  cerr << "       inputfile describe a capacitated facility location" << endl;
-  cerr << "       instance as in ../../../examples/data/facility.dat." << endl;
-  cerr << "       If no input file is specified read the file in" << endl;
-  cerr << "       example/data directory." << endl;
-  cerr << "       Options are:" << endl;
-  cerr << "          -a solve problem with Benders letting CPLEX do the decomposition" << endl;
-  cerr << "          -b solve problem with Benders specifying a decomposition" << endl;
-  cerr << "          -d solve problem without using decomposition (default)" << endl;
+  cerr << "Usage: " << progname << "-n [number_of_seats_to_assign] [input graph file]" << endl;
   cerr << " Exiting..." << endl;
 }
 
