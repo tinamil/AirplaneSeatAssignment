@@ -10,25 +10,25 @@ enum graph_input_type { seat = 'x', wall = '-', space = ' ' };
 
 struct Graph
 {
-  uint8_t** adjacency_matrix;
+  float** adjacency_matrix;
   int size;
 };
 
 struct Node
 {
 
-  Node(int _g) : g(_g), size(0)
+  Node(float _g) : g(_g), size(0)
   {
     vertices = (int*)malloc(sizeof(int) * size);
   }
-  Node(int _g, const Node& parent, int i) : g(_g), size(parent.size + 1)
+  Node(float _g, const Node& parent, int i) : g(_g), size(parent.size + 1)
   {
     vertices = (int*)malloc(sizeof(int) * size);
     memcpy(vertices, parent.vertices, sizeof(int) * parent.size);
     vertices[parent.size] = i;
   }
 
-  int g;
+  float g;
   int size;
   int* vertices;
 };
@@ -67,11 +67,11 @@ Graph process_graph(std::vector<std::string> graph_strings)
   }
 
   //Build an n^2 adjacency matrix of integer values 
-  uint8_t** adjacency_matrix = new uint8_t * [vertex_counter];
+  float** adjacency_matrix = new float* [vertex_counter];
   for(size_t i = 0; i < vertex_counter; ++i)
   {
-    adjacency_matrix[i] = new uint8_t[vertex_counter];
-    std::fill(adjacency_matrix[i], adjacency_matrix[i] + vertex_counter, 0);
+    adjacency_matrix[i] = new float[vertex_counter];
+    std::fill(adjacency_matrix[i], adjacency_matrix[i] + vertex_counter, 0.f);
   }
 
   //Add the edges
@@ -92,7 +92,7 @@ Graph process_graph(std::vector<std::string> graph_strings)
             if(vertex_indices[row2][col2] == -1) continue;
             int index2 = vertex_indices[row2][col2];
             if(index1 != index2)
-              adjacency_matrix[index1][index2] = 1;
+              adjacency_matrix[index1][index2] = 1 + (float)rand() / RAND_MAX;
           }
         }
       }
@@ -101,13 +101,13 @@ Graph process_graph(std::vector<std::string> graph_strings)
   return Graph{ adjacency_matrix, vertex_counter };
 }
 
-Node search1(Graph graph, int n = 119)
+Node search1(Graph graph, int n = 43)
 {
   size_t expansions = 0;
   Node best{ INT_MAX };
 
   std::priority_queue<Node, std::vector<Node>, NodeSort> p_queue;
-  p_queue.emplace(0);
+  p_queue.emplace(0.f);
 
   while(!p_queue.empty())
   {
@@ -129,7 +129,7 @@ Node search1(Graph graph, int n = 119)
       int end = graph.size + next.size - n + 1;
       for(int i = start; i < end; ++i)
       {
-        int cost = 0;
+        float cost = 0;
         for(int j = next.size - 1; j >= 0; --j)
         {
           cost += graph.adjacency_matrix[i][next.vertices[j]];
