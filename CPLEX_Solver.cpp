@@ -9,7 +9,7 @@ std::vector<bool> CPLEX_Solver::Solve(Graph g, const int target_seats)
   IloInt const nbSeats = g.size;
   IloInt const nbTargetSeats = target_seats;
   IloIntVarArray  assigned_seats(env, nbSeats, 0, 1);
-  IloBoolVarArray  shared_seats(env, nbSeats * nbSeats);
+  IloIntVarArray  shared_seats(env, nbSeats * nbSeats, 0, 1);
   IloIntArray      edge_costs(env, nbSeats * nbSeats);
 
 
