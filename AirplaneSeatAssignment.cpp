@@ -45,16 +45,31 @@ Graph process_graph(std::vector<std::string> graph_strings)
       int index1 = vertex_indices[row][col];
       if(letter == seat)
       {
-        for(int row2 = row - 1; row2 <= row + 1; ++row2)
+        int max_row_offset = 2;
+        int max_col_offset = 2;
+        int max_risk = 100;
+
+        for(int row2 = row - max_row_offset; row2 <= row + max_row_offset; ++row2)
         {
           if(row2 < 0 || row2 >= vertex_indices.size()) continue;
-          for(int col2 = col - 1; col2 <= col + 1; ++col2)
+          for(int col2 = col - max_col_offset; col2 <= col + max_col_offset; ++col2)
           {
             if(col2 < 0 || col2 >= vertex_indices[row2].size()) continue;
             if(vertex_indices[row2][col2] == -1) continue;
             int index2 = vertex_indices[row2][col2];
-            if(index1 != index2)
-              adjacency_matrix[index1][index2] = 1;
+            // Assign edge weights based on relative placement of seats
+            if (index1 != index2) {
+                if (abs(row - row2) == 1 && col == col2) {
+                    adjacency_matrix[index1][index2] = max_risk;
+                }
+                else if (abs(row - row2) <= 1 && abs(col - col2) <= 1) {
+                    adjacency_matrix[index1][index2] = max_risk / 10;
+                }
+                else {
+                    adjacency_matrix[index1][index2] = max_risk / 100;
+                }
+                // std::cout << "Edge between (" << row << ", " << col << ") and (" << row2 << ", " << col2 << "): " << adjacency_matrix[index1][index2] << "\n";
+            }
           }
         }
       }
