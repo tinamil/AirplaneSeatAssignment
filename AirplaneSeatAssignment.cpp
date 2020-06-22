@@ -58,17 +58,21 @@ Graph process_graph(std::vector<std::string> graph_strings)
             if(vertex_indices[row2][col2] == -1) continue;
             int index2 = vertex_indices[row2][col2];
             // Assign edge weights based on relative placement of seats
-            if (index1 != index2) {
-                if (abs(row - row2) == 1 && col == col2) {
-                    adjacency_matrix[index1][index2] = max_risk;
-                }
-                else if (abs(row - row2) <= 1 && abs(col - col2) <= 1) {
-                    adjacency_matrix[index1][index2] = max_risk / 10;
-                }
-                else {
-                    adjacency_matrix[index1][index2] = max_risk / 100;
-                }
-                // std::cout << "Edge between (" << row << ", " << col << ") and (" << row2 << ", " << col2 << "): " << adjacency_matrix[index1][index2] << "\n";
+            if(index1 != index2)
+            {
+              if(abs(row - row2) == 1 && col == col2)
+              {
+                adjacency_matrix[index1][index2] = max_risk;
+              }
+              else if(abs(row - row2) <= 1 && abs(col - col2) <= 1)
+              {
+                adjacency_matrix[index1][index2] = max_risk / 10;
+              }
+              else
+              {
+                adjacency_matrix[index1][index2] = max_risk / 100;
+              }
+              // std::cout << "Edge between (" << row << ", " << col << ") and (" << row2 << ", " << col2 << "): " << adjacency_matrix[index1][index2] << "\n";
             }
           }
         }
@@ -88,6 +92,7 @@ void Display(std::vector<std::string> graph_strings, std::vector<bool> included_
     {
       if(graph_strings[row][col] == graph_input_type::seat)
       {
+        if(seat >= included_seats.size()) return;
         if(included_seats[seat++]) std::cout << "x";
         else std::cout << "o";
       }
@@ -105,41 +110,54 @@ void Display(std::vector<std::string> graph_strings, std::vector<bool> included_
 static void usage(const char* progname)
 {
   using namespace std;
-  cerr << "Usage: " << progname << "-n [number_of_seats_to_assign] [input graph file]" << endl;
+  cerr << "Usage: " << progname << " ";
+  cerr << "-n [number_of_seats_to_assign or risk constraint] ";
+  cerr << "-m [model_type, 1 = risk minimize, 2 = risk constrained] ";
+  cerr << "[input graph file] " << endl;
   cerr << " Exiting..." << endl;
 }
 
-int parse_int(const char* int_string)
+double parse_num(const char* string)
 {
   std::stringstream strValue;
-  strValue << int_string;
-  unsigned int intValue;
-  strValue >> intValue;
+  strValue << string;
+  double value;
+  strValue >> value;
   if(strValue.fail()) return -1;
-  return intValue;
+  return value;
 }
+
 
 int main(int argc, char* argv[])
 {
   CPLEX_Solver x;
-  int num_seats = -1;
+  double model_input = -1;
+  int model_type = -1;
   for(int i = 1; i < argc; ++i)
   {
     if(argv[i][0] == '-')
     {
       switch(argv[i][1])
       {
+        case 'R':
+        case 'r':
         case 'N':
         case 'n':
-          num_seats = parse_int(argv[i + 1]);
+          model_input = parse_num(argv[i + 1]);
           i += 1;
+          break;
+        case 'M':
+        case 'm':
+          model_type = (int)round(parse_num(argv[i + 1]));
+          i += 1;
+          if(model_type < 1 || model_type > 2) usage(argv[0]);
           break;
         default: usage(argv[0]);
       }
     }
     else
     {
-      if(num_seats == -1)
+      if(model_input == -1)
       {
         usage(argv[0]);
         break;
@@ -153,8 +171,17 @@ int main(int argc, char* argv[])
           graph_string.push_back(line);
         }
         auto matrix = process_graph(graph_string);
-        auto solution = x.Solve(matrix, num_seats);
-        Display(graph_string, solution);
+        std::vector<bool> solutions;
+        switch(model_type)
+        {
+          case 1:
+            solutions = x.Solve_Vertex_Packing_Risk_Minimization(matrix, (int)round(model_input));
+            break;
+          case 2:
+            solutions = x.Solve_Risk_Constrained_Vertex_Packing(matrix, model_input);
+            break;
+        }
+        Display(graph_string, solutions);
       }
       else
       {
