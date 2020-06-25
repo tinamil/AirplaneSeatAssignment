@@ -1,5 +1,13 @@
 #include "CPLEX_Solver.h"
-#include <ilcplex/ilocplex.h>
+
+decltype (auto) CPLEX_Solver::SetupParams(IloEnv& env)
+{
+  IloCplex::ParameterSet params(env);
+  params.setParam(IloCplex::Param::ClockType, 1); //CPU time
+  params.setParam(IloCplex::Param::TimeLimit, 21600); //6 hours of CPU time 
+  params.setParam(IloCplex::Param::WorkMem, 102400); //100 GB
+  return params;
+}
 
 std::vector<bool> CPLEX_Solver::Solve_Vertex_Packing_Risk_Minimization(const Graph& g, const int target_seats)
 {
@@ -28,6 +36,7 @@ std::vector<bool> CPLEX_Solver::Solve_Vertex_Packing_Risk_Minimization(const Gra
   model.add(IloMinimize(env, IloScalProd(shared_seats, edge_costs)));
 
   IloCplex  cplex(model);
+  cplex.setParameterSet(SetupParams(env));
   cplex.solve();
   cplex.out() << "Solution status: " << cplex.getStatus() << std::endl;
   cplex.out() << "Optimal value: " << cplex.getObjValue() << std::endl;
@@ -65,6 +74,7 @@ std::vector<bool> CPLEX_Solver::Solve_Risk_Constrained_Vertex_Packing(const Grap
   model.add(IloMaximize(env, IloSum(assigned_seats)));
 
   IloCplex  cplex(model);
+  cplex.setParameterSet(SetupParams(env));
   cplex.solve();
   cplex.out() << "Solution status: " << cplex.getStatus() << std::endl;
   cplex.out() << "Optimal value: " << cplex.getObjValue() << std::endl;
