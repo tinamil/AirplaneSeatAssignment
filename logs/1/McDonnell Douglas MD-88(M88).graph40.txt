@@ -1,4 +1,7 @@
 Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de2ae
+CPXPARAM_ClockType                               1
+CPXPARAM_TimeLimit                               21600
+CPXPARAM_WorkMem                                 102400
 Tried aggregator 1 time.
 MIP Presolve eliminated 43446 rows and 20289 columns.
 Reduced MIP has 957 rows, 1105 columns, and 3017 nonzeros.
@@ -30,7 +33,7 @@ Root relaxation solution time = 0.00 sec. (2.87 ticks)
 *     0+    0                          318.0000        0.0000           100.00%
 Detecting symmetries...
       0     2        0.0000    66      318.0000        0.0000      168  100.00%
-Elapsed time = 0.39 sec. (146.36 ticks, tree = 0.02 MB, solutions = 5)
+Elapsed time = 2.45 sec. (146.36 ticks, tree = 0.02 MB, solutions = 5)
 *  1586+  856                          258.0000        0.0000           100.00%
 *  1980+ 1381                          230.0000        0.0000           100.00%
 *  2007+ 1055                          208.0000        0.0000           100.00%
@@ -49,11 +52,11 @@ Tried aggregator 1 time.
 MIP Presolve eliminated 0 rows and 143 columns.
 Reduced MIP has 957 rows, 962 columns, and 2874 nonzeros.
 Reduced MIP has 962 binaries, 0 generals, 0 SOSs, and 0 indicators.
-Presolve time = 0.00 sec. (1.87 ticks)
+Presolve time = 0.02 sec. (1.87 ticks)
 Tried aggregator 1 time.
 Reduced MIP has 957 rows, 962 columns, and 2874 nonzeros.
 Reduced MIP has 962 binaries, 0 generals, 0 SOSs, and 0 indicators.
-Presolve time = 0.00 sec. (2.45 ticks)
+Presolve time = 0.02 sec. (2.45 ticks)
 Represolve time = 0.03 sec. (18.48 ticks)
    7256     0        0.0000   110      134.0000      Cuts: 31    92035  100.00%
    7256     0        0.0000   110      134.0000     Cuts: 160    92146  100.00%
@@ -81,7 +84,7 @@ Represolve time = 0.03 sec. (18.48 ticks)
 * 36881+23587                           88.0000        9.2667            89.47%
   37555 26256       23.5101   137       88.0000        9.2778   676764   89.46%
   59462 44167       28.2556   142       88.0000       11.1828  1097330   87.29%
-Elapsed time = 7.02 sec. (4961.95 ticks, tree = 260.74 MB, solutions = 47)
+Elapsed time = 108.38 sec. (4961.95 ticks, tree = 260.74 MB, solutions = 47)
   78496 62246       26.7083   144       88.0000       12.2232  1625258   86.11%
  100883 81069       69.3333   139       88.0000       13.2500  2115822   84.94%
 
@@ -96,7 +99,7 @@ Tried aggregator 1 time.
 Reduced MIP has 957 rows, 962 columns, and 3011 nonzeros.
 Reduced MIP has 962 binaries, 0 generals, 0 SOSs, and 0 indicators.
 Presolve time = 0.00 sec. (2.52 ticks)
-Represolve time = 0.20 sec. (36.63 ticks)
+Represolve time = 0.22 sec. (36.63 ticks)
  104389     0        0.0000   127       88.0000      Cuts: 95  2287925   84.66%
  104389     0        4.5405   127       88.0000      Cuts: 97  2288192   84.66%
  104389     0        7.3063   127       88.0000     Cuts: 164  2288350   84.66%
@@ -206,7 +209,7 @@ Presolve time = 0.00 sec. (2.01 ticks)
 Tried aggregator 1 time.
 Reduced MIP has 789 rows, 764 columns, and 2589 nonzeros.
 Reduced MIP has 764 binaries, 0 generals, 0 SOSs, and 0 indicators.
-Presolve time = 0.02 sec. (2.14 ticks)
+Presolve time = 0.00 sec. (2.14 ticks)
 Represolve time = 0.08 sec. (62.01 ticks)
  104389     0       74.6067   291       88.0000 ZeroHalf: 107  2308746   15.16%
  104389     0       76.0606   291       88.0000     Cuts: 101  2309070   10.29%
@@ -223,13 +226,13 @@ Zero-half cuts applied:  300
 Gomory fractional cuts applied:  5
 
 Root node processing (before b&c):
-  Real time             =    0.33 sec. (153.09 ticks)
+  Real time             =    2.47 sec. (153.09 ticks)
 Parallel b&c, 24 threads:
-  Real time             =   23.48 sec. (15894.65 ticks)
-  Sync time (average)   =    1.94 sec.
+  Real time             =  379.03 sec. (15894.65 ticks)
+  Sync time (average)   =   28.62 sec.
   Wait time (average)   =    0.01 sec.
                           ------------
-Total (root+branch&cut) =   23.81 sec. (16047.74 ticks)
+Total (root+branch&cut) =  381.50 sec. (16047.74 ticks)
 Solution status: Optimal
 Optimal value: 88
 

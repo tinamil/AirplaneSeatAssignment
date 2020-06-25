@@ -1,4 +1,7 @@
 Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de2ae
+CPXPARAM_ClockType                               1
+CPXPARAM_TimeLimit                               21600
+CPXPARAM_WorkMem                                 102400
 Tried aggregator 1 time.
 MIP Presolve eliminated 43446 rows and 20289 columns.
 Reduced MIP has 957 rows, 1105 columns, and 3017 nonzeros.
@@ -15,7 +18,7 @@ Probing time = 0.00 sec. (0.21 ticks)
 MIP emphasis: balance optimality and feasibility.
 MIP search method: dynamic search.
 Parallel mode: deterministic, using up to 24 threads.
-Root relaxation solution time = 0.02 sec. (21.46 ticks)
+Root relaxation solution time = 0.11 sec. (21.46 ticks)
 
         Nodes                                         Cuts/
    Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
@@ -62,19 +65,19 @@ Detecting symmetries...
       0     0     2495.2895   206     2510.0000  ZeroHalf: 27     4088    0.59%
 *     0+    0                         2506.0000     2495.2895             0.43%
       0     0        cutoff           2506.0000     2506.0000     4122    0.00%
-Elapsed time = 1.39 sec. (790.24 ticks, tree = 0.01 MB, solutions = 13)
+Elapsed time = 16.11 sec. (790.24 ticks, tree = 0.01 MB, solutions = 13)
 
 Zero-half cuts applied:  655
 Gomory fractional cuts applied:  8
 
 Root node processing (before b&c):
-  Real time             =    1.39 sec. (792.63 ticks)
+  Real time             =   16.11 sec. (792.63 ticks)
 Parallel b&c, 24 threads:
   Real time             =    0.00 sec. (0.00 ticks)
   Sync time (average)   =    0.00 sec.
   Wait time (average)   =    0.00 sec.
                           ------------
-Total (root+branch&cut) =    1.39 sec. (792.63 ticks)
+Total (root+branch&cut) =   16.11 sec. (792.63 ticks)
 Solution status: Optimal
 Optimal value: 2506
 

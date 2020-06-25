@@ -1,4 +1,7 @@
 Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de2ae
+CPXPARAM_ClockType                               1
+CPXPARAM_TimeLimit                               21600
+CPXPARAM_WorkMem                                 102400
 Tried aggregator 1 time.
 MIP Presolve eliminated 63548 rows and 29896 columns.
 Reduced MIP has 1253 rows, 1432 columns, and 3936 nonzeros.
@@ -15,7 +18,7 @@ Probing time = 0.00 sec. (0.28 ticks)
 MIP emphasis: balance optimality and feasibility.
 MIP search method: dynamic search.
 Parallel mode: deterministic, using up to 24 threads.
-Root relaxation solution time = 0.05 sec. (43.65 ticks)
+Root relaxation solution time = 0.50 sec. (43.65 ticks)
 
         Nodes                                         Cuts/
    Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
@@ -50,19 +53,19 @@ Root relaxation solution time = 0.05 sec. (43.65 ticks)
       0     0    26251.6000   679    26256.0000  ZeroHalf: 31     2546    0.02%
       0     0    26252.1667   679    26256.0000  ZeroHalf: 39     2602    0.01%
       0     2    26252.1667   480    26256.0000    26252.1667     2602    0.01%
-Elapsed time = 0.77 sec. (416.07 ticks, tree = 0.02 MB, solutions = 9)
+Elapsed time = 7.84 sec. (416.07 ticks, tree = 0.02 MB, solutions = 9)
 
 Zero-half cuts applied:  353
 Gomory fractional cuts applied:  1
 
 Root node processing (before b&c):
-  Real time             =    0.72 sec. (417.13 ticks)
+  Real time             =    7.81 sec. (417.13 ticks)
 Parallel b&c, 24 threads:
-  Real time             =    0.31 sec. (5.72 ticks)
-  Sync time (average)   =    0.21 sec.
+  Real time             =    0.05 sec. (5.72 ticks)
+  Sync time (average)   =    0.00 sec.
   Wait time (average)   =    0.00 sec.
                           ------------
-Total (root+branch&cut) =    1.03 sec. (422.85 ticks)
+Total (root+branch&cut) =    7.86 sec. (422.85 ticks)
 Solution status: Optimal
 Optimal value: 26256
 

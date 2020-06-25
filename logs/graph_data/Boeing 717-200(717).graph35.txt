@@ -1,0 +1,82 @@
+Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de2ae
+CPXPARAM_ClockType                               1
+CPXPARAM_TimeLimit                               5
+Tried aggregator 1 time.
+MIP Presolve eliminated 23527 rows and 10754 columns.
+Reduced MIP has 674 rows, 783 columns, and 2129 nonzeros.
+Reduced MIP has 783 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (12.57 ticks)
+Found incumbent of value 6324.000000 after 0.02 sec. (14.68 ticks)
+Probing time = 0.00 sec. (0.15 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 674 rows, 783 columns, and 2129 nonzeros.
+Reduced MIP has 783 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (1.67 ticks)
+Probing time = 0.00 sec. (0.15 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 24 threads.
+Root relaxation solution time = 0.00 sec. (1.50 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                         6324.0000        0.0000           100.00%
+*     0+    0                         1530.0000        0.0000           100.00%
+      0     0        0.0000    66     1530.0000        0.0000       82  100.00%
+      0     0        0.0000    66     1530.0000      Cuts: 44      110  100.00%
+      0     0        0.0000    66     1530.0000      Cuts: 43      135  100.00%
+      0     0        0.0000    66     1530.0000     Cuts: 152      192  100.00%
+*     0+    0                          394.0000        0.0000           100.00%
+*     0+    0                          226.0000        0.0000           100.00%
+      0     2        0.0000    66      226.0000        0.0000      192  100.00%
+Elapsed time = 2.05 sec. (99.96 ticks, tree = 0.02 MB, solutions = 4)
+*  1175+  665                          220.0000        0.0000           100.00%
+*  1404  1115      integral     0      214.0000        0.0000    26956  100.00%
+*  2072  1617      integral     0      212.0000        0.0000    36408  100.00%
+*  2954  2090      integral     0      208.0000        3.7500    47133   98.20%
+*  3187+ 2247                          204.0000        3.7500            98.16%
+*  3296  2599      integral     0      202.0000        3.7500    59186   98.14%
+Starting limited solution polishing.
+*  3830+ 2350                          188.0000        5.4667            97.09%
+
+Zero-half cuts applied:  118
+Gomory fractional cuts applied:  7
+
+Root node processing (before b&c):
+  Real time             =    2.03 sec. (100.92 ticks)
+Parallel b&c, 24 threads:
+  Real time             =    3.14 sec. (126.66 ticks)
+  Sync time (average)   =    0.93 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    5.17 sec. (227.58 ticks)
+Solution status: Feasible
+Optimal value: 188
+
+xx  xx
+oo  oo
+xx  ox
+-- ---
+xo oox
+oo oxo
+xo ooo
+oo oox
+xx xoo
+oo oox
+oo ooo
+xo oox
+oo xoo
+ox oox
+ o oo 
+xo oox
+oo xoo
+xo oox
+oo xoo
+xo oox
+oo ooo
+xo xox
+oo ooo
+xo xox
+

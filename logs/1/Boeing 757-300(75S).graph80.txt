@@ -1,4 +1,7 @@
 Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de2ae
+CPXPARAM_ClockType                               1
+CPXPARAM_TimeLimit                               21600
+CPXPARAM_WorkMem                                 102400
 Tried aggregator 1 time.
 MIP Presolve eliminated 55330 rows and 25988 columns.
 Reduced MIP has 1119 rows, 1286 columns, and 3522 nonzeros.
@@ -10,7 +13,7 @@ Tried aggregator 1 time.
 Detecting symmetries...
 Reduced MIP has 1119 rows, 1286 columns, and 3522 nonzeros.
 Reduced MIP has 1286 binaries, 0 generals, 0 SOSs, and 0 indicators.
-Presolve time = 0.02 sec. (3.04 ticks)
+Presolve time = 0.00 sec. (3.04 ticks)
 Probing time = 0.00 sec. (0.25 ticks)
 MIP emphasis: balance optimality and feasibility.
 MIP search method: dynamic search.
@@ -77,7 +80,7 @@ Root relaxation solution time = 0.00 sec. (2.77 ticks)
       0     0     1218.8510   160     1230.0000  ZeroHalf: 24     8465    0.91%
       0     0     1219.0888   160     1230.0000  ZeroHalf: 13     8598    0.89%
       0     2     1219.0888   400     1230.0000     1219.0888     8598    0.89%
-Elapsed time = 2.80 sec. (1727.50 ticks, tree = 0.02 MB, solutions = 15)
+Elapsed time = 41.19 sec. (1727.50 ticks, tree = 0.02 MB, solutions = 15)
 *     2     2      integral     0     1222.0000     1219.0888     8698    0.24%
 
 Zero-half cuts applied:  771
@@ -85,13 +88,13 @@ Lift and project cuts applied:  2
 Gomory fractional cuts applied:  25
 
 Root node processing (before b&c):
-  Real time             =    2.67 sec. (1729.24 ticks)
+  Real time             =   41.16 sec. (1729.24 ticks)
 Parallel b&c, 24 threads:
-  Real time             =    0.39 sec. (62.03 ticks)
-  Sync time (average)   =    0.25 sec.
+  Real time             =    3.20 sec. (62.03 ticks)
+  Sync time (average)   =    2.94 sec.
   Wait time (average)   =    0.00 sec.
                           ------------
-Total (root+branch&cut) =    3.06 sec. (1791.27 ticks)
+Total (root+branch&cut) =   44.36 sec. (1791.27 ticks)
 Solution status: Optimal
 Optimal value: 1222
 
