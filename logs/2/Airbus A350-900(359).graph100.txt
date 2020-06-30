@@ -1,4 +1,7 @@
 Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de2ae
+CPXPARAM_ClockType                               1
+CPXPARAM_TimeLimit                               21600
+CPXPARAM_WorkMem                                 102400
 Found incumbent of value 0.000000 after 0.00 sec. (3.42 ticks)
 Tried aggregator 1 time.
 MIP Presolve eliminated 183182 rows and 89546 columns.
@@ -10,13 +13,13 @@ Tried aggregator 1 time.
 Detecting symmetries...
 Reduced MIP has 4091 rows, 4396 columns, and 16360 nonzeros.
 Reduced MIP has 4396 binaries, 0 generals, 0 SOSs, and 0 indicators.
-Presolve time = 0.03 sec. (48.13 ticks)
-Probing time = 0.00 sec. (11.68 ticks)
+Presolve time = 0.02 sec. (48.13 ticks)
+Probing time = 0.11 sec. (11.68 ticks)
 Clique table members: 51.
 MIP emphasis: balance optimality and feasibility.
 MIP search method: dynamic search.
 Parallel mode: deterministic, using up to 24 threads.
-Root relaxation solution time = 0.05 sec. (75.11 ticks)
+Root relaxation solution time = 0.31 sec. (75.11 ticks)
 
         Nodes                                         Cuts/
    Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
@@ -97,7 +100,7 @@ Root relaxation solution time = 0.05 sec. (75.11 ticks)
       0     0       85.9215   368       77.0000     Cuts: 181    36010   11.59%
       0     0       85.8862   368       77.0000     Cuts: 183    36433   11.54%
       0     2       85.8862   526       77.0000       85.8862    36433   11.54%
-Elapsed time = 13.11 sec. (14042.87 ticks, tree = 0.02 MB, solutions = 18)
+Elapsed time = 69.73 sec. (14042.87 ticks, tree = 0.02 MB, solutions = 18)
       8    10       84.3860   418       77.0000       85.8861    37657   11.54%
      14    16       83.9611   386       77.0000       85.8861    38200   11.54%
      38    32       82.4436   510       77.0000       85.8861    42957   11.54%
@@ -109,7 +112,7 @@ Elapsed time = 13.11 sec. (14042.87 ticks, tree = 0.02 MB, solutions = 18)
     774   530       82.0227   570       78.0000       85.8602   166010   10.08%
     885   622       80.5338   438       78.0000       85.8602   196597   10.08%
    1676  1125       81.2204   503       78.0000       85.8602   270570   10.08%
-Elapsed time = 16.78 sec. (17168.14 ticks, tree = 23.41 MB, solutions = 19)
+Elapsed time = 135.77 sec. (17168.14 ticks, tree = 23.41 MB, solutions = 19)
    2641  1987       80.7650   518       78.0000       85.8602   378193   10.08%
    3445  2699       80.0529   488       78.0000       84.4371   461713    8.25%
    4141  3291       79.0216   265       78.0000       84.1058   545855    7.83%
@@ -127,7 +130,7 @@ Tried aggregator 1 time.
 Reduced MIP has 3843 rows, 3900 columns, and 14872 nonzeros.
 Reduced MIP has 3900 binaries, 0 generals, 0 SOSs, and 0 indicators.
 Presolve time = 0.03 sec. (41.95 ticks)
-Represolve time = 0.31 sec. (231.82 ticks)
+Represolve time = 0.30 sec. (231.82 ticks)
    5020     0       84.9578   673       78.0000     Cuts: 108   680417    7.74%
    5020     0       84.8164   673       78.0000      Cuts: 65   680869    7.74%
    5020     0       84.6976   673       78.0000     Cuts: 121   681256    7.74%
@@ -164,7 +167,7 @@ Represolve time = 0.31 sec. (231.82 ticks)
    5055    18       80.7476   526       78.0000       82.6776   709145    6.00%
    5178    68       80.5983   388       78.0000       82.0884   781499    5.24%
    5420   279       79.8136   566       78.0000       82.0884   877541    5.24%
-Elapsed time = 38.78 sec. (40385.46 ticks, tree = 0.26 MB, solutions = 19)
+Elapsed time = 363.06 sec. (40385.46 ticks, tree = 0.26 MB, solutions = 19)
    5931   573       79.4049   322       78.0000       82.0884   965316    5.24%
    6417   937       80.2560   348       78.0000       81.5217  1036308    4.51%
    6868  1270       79.6635   457       78.0000       81.3969  1087228    4.36%
@@ -175,7 +178,7 @@ Elapsed time = 38.78 sec. (40385.46 ticks, tree = 0.26 MB, solutions = 19)
   10441  3704       79.6587   328       78.0000       80.7191  1468863    3.49%
   11076  4268        cutoff             78.0000       80.6775  1558636    3.43%
   11917  4640       79.3623   252       78.0000       80.6062  1625776    3.34%
-Elapsed time = 51.36 sec. (49935.67 ticks, tree = 121.92 MB, solutions = 19)
+Elapsed time = 602.55 sec. (49935.67 ticks, tree = 121.92 MB, solutions = 19)
   12544  5189       79.5363   312       78.0000       80.5693  1708117    3.29%
   13094  5856       79.8203   341       78.0000       80.5463  1821384    3.26%
   13893  6034       79.4158   345       78.0000       80.4879  1865038    3.19%
@@ -190,13 +193,13 @@ Lift and project cuts applied:  160
 Gomory fractional cuts applied:  8
 
 Root node processing (before b&c):
-  Real time             =   12.94 sec. (13976.81 ticks)
+  Real time             =   69.58 sec. (13976.81 ticks)
 Parallel b&c, 24 threads:
-  Real time             =   47.83 sec. (42134.81 ticks)
-  Sync time (average)   =    8.85 sec.
-  Wait time (average)   =    0.05 sec.
+  Real time             =  689.33 sec. (42134.81 ticks)
+  Sync time (average)   =  134.41 sec.
+  Wait time (average)   =    0.04 sec.
                           ------------
-Total (root+branch&cut) =   60.77 sec. (56111.62 ticks)
+Total (root+branch&cut) =  758.91 sec. (56111.62 ticks)
 Solution status: Optimal
 Optimal value: 79
 
