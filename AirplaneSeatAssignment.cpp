@@ -7,9 +7,14 @@
 #include <algorithm>
 #include <sstream>
 
-Graph process_graph(std::vector<std::string> graph_strings)
+enum Model
 {
-//Build a mapping from seat row/column to vertex index for adjacency matrix position
+  Coughing = 1, NotCoughing = 2
+};
+
+Graph process_graph(std::vector<std::string> graph_strings, Model model)
+{
+  //Build a mapping from seat row/column to vertex index for adjacency matrix position
   std::vector<std::vector<int>> vertex_indices;
   vertex_indices.resize(graph_strings.size());
 
@@ -45,9 +50,8 @@ Graph process_graph(std::vector<std::string> graph_strings)
       int index1 = vertex_indices[row][col];
       if(letter == seat)
       {
-        int max_row_offset = 2;
-        int max_col_offset = 2;
-        int max_risk = 100;
+        int max_row_offset = 1;
+        int max_col_offset = 4;
 
         for(int row2 = row - max_row_offset; row2 <= row + max_row_offset; ++row2)
         {
@@ -62,15 +66,39 @@ Graph process_graph(std::vector<std::string> graph_strings)
             {
               if(abs(row - row2) == 1 && col == col2)
               {
-                adjacency_matrix[index1][index2] = max_risk;
+                switch(model)
+                {
+                  case Coughing: adjacency_matrix[index1][index2] = 58; break;
+                  case NotCoughing: adjacency_matrix[index1][index2] = 90; break;
+                }
               }
               else if(abs(row - row2) <= 1 && abs(col - col2) <= 1)
               {
-                adjacency_matrix[index1][index2] = max_risk / 10;
+                switch(model)
+                {
+                  case Coughing: adjacency_matrix[index1][index2] = 7; break;
+                  case NotCoughing: adjacency_matrix[index1][index2] = 90; break;
+                }
+              }
+              else if(abs(row - row2) <= 1 && abs(col - col2) <= 2)
+              {
+                switch(model)
+                {
+                  case Coughing: adjacency_matrix[index1][index2] = 4; break;
+                  case NotCoughing: adjacency_matrix[index1][index2] = 90; break;
+                }
+              }
+              else if(abs(row - row2) <= 1 && abs(col - col2) <= 4)
+              {
+                switch(model)
+                {
+                  case Coughing: adjacency_matrix[index1][index2] = 4; break;
+                  case NotCoughing: adjacency_matrix[index1][index2] = 0; break;
+                }
               }
               else
               {
-                adjacency_matrix[index1][index2] = max_risk / 100;
+                std::cout << "Error, did not assign an edge weight correctly";
               }
               // std::cout << "Edge between (" << row << ", " << col << ") and (" << row2 << ", " << col2 << "): " << adjacency_matrix[index1][index2] << "\n";
             }
@@ -113,6 +141,7 @@ static void usage(const char* progname)
   cerr << "Usage: " << progname << " ";
   cerr << "-n [number_of_seats_to_assign or risk constraint] ";
   cerr << "-m [model_type, 1 = risk minimize, 2 = risk constrained] ";
+  cerr << "-t [risk model, 1 = coughing (default), 2 = not-coughing]";
   cerr << "[input graph file] " << endl;
   cerr << " Exiting..." << endl;
 }
@@ -133,6 +162,7 @@ int main(int argc, char* argv[])
   CPLEX_Solver x;
   double model_input = -1;
   int model_type = -1;
+  Model risk_model = Model::Coughing;
   for(int i = 1; i < argc; ++i)
   {
     if(argv[i][0] == '-')
@@ -152,6 +182,11 @@ int main(int argc, char* argv[])
           i += 1;
           if(model_type < 1 || model_type > 2) usage(argv[0]);
           break;
+        case 't':
+        case 'T':
+          risk_model = (Model)round(parse_num(argv[i + 1]));
+          i += 1;
+          break;
         default: usage(argv[0]);
       }
     }
@@ -170,7 +205,7 @@ int main(int argc, char* argv[])
         {
           graph_string.push_back(line);
         }
-        auto matrix = process_graph(graph_string);
+        auto matrix = process_graph(graph_string, risk_model);
         std::vector<bool> solutions;
         switch(model_type)
         {

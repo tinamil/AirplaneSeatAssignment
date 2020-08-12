@@ -6,6 +6,12 @@ decltype (auto) CPLEX_Solver::SetupParams(IloEnv& env)
   params.setParam(IloCplex::Param::ClockType, 1); //CPU time
   params.setParam(IloCplex::Param::TimeLimit, 21600); //6 hours of CPU time 
   params.setParam(IloCplex::Param::WorkMem, 102400); //100 GB
+
+  //Enable these parameters to get all solutions instead of 1st optimal
+  //params.setParam(IloCplex::Param::MIP::Pool::AbsGap, 0); 
+  //params.setParam(IloCplex::Param::MIP::Pool::Intensity, 4); 
+  //params.setParam(IloCplex::Param::MIP::Limits::Populate, 2100000000); 
+
   return params;
 }
 
@@ -78,6 +84,7 @@ std::vector<bool> CPLEX_Solver::Solve_Risk_Constrained_Vertex_Packing(const Grap
   cplex.solve();
   cplex.out() << "Solution status: " << cplex.getStatus() << std::endl;
   cplex.out() << "Optimal value: " << cplex.getObjValue() << std::endl;
+
   std::vector<bool> results;
   for(int i = 0; i < g.size; ++i)
   {

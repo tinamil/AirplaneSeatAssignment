@@ -8,7 +8,7 @@ $input = $PSScriptRoot + '/graphs/Delta/'
 $stdErrLog = $myLog + 'stderr.log'
 $stdOutLog = $myLog + 'stdout.log'
 
-$files = ("Boeing 717-200(717).graph")
+$files = ("Boeing 717-200(717).graph", "Airbus A330-300(333).graph")
 foreach($model_type in $model_types)
 {
     For ($val=1; $val -lt 250; ++$val)
