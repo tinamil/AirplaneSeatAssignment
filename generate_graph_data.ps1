@@ -20,7 +20,7 @@ foreach($model_type in $model_types)
             $error_file = $myLog + $input_file + ".err"
             $input_file_name = -join ("`"", $input, $input_file, "`"")
             Write-Output $output_file
-            Start-Process -File x64\Release\AirplaneSeatAssignment.exe -ArgumentList '-n', $val, '-m', $model_type, $input_file_name  -RedirectStandardOutput $output_file -RedirectStandardError $stdErrLog -wait
+            Start-Process -File "${PSScriptRoot}/x64/Release/AirplaneSeatAssignment.exe" -ArgumentList '-n', $val, '-m', $model_type, $input_file_name  -RedirectStandardOutput $output_file -RedirectStandardError $stdErrLog -wait
         }
     }
 }
