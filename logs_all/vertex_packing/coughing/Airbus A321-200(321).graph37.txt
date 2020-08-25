@@ -1,0 +1,111 @@
+Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de2ae
+CPXPARAM_ClockType                               1
+CPXPARAM_TimeLimit                               21600
+CPXPARAM_WorkMem                                 102400
+Tried aggregator 1 time.
+MIP Presolve eliminated 71775 rows and 34107 columns.
+Reduced MIP has 1188 rows, 1378 columns, and 3752 nonzeros.
+Reduced MIP has 1378 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.03 sec. (36.18 ticks)
+Found incumbent of value 4380.000000 after 0.05 sec. (41.86 ticks)
+Probing time = 0.00 sec. (0.26 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 1188 rows, 1378 columns, and 3752 nonzeros.
+Reduced MIP has 1378 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (2.85 ticks)
+Probing time = 0.00 sec. (0.26 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 24 threads.
+Root relaxation solution time = 0.00 sec. (2.57 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                         4380.0000        0.0000           100.00%
+*     0+    0                           28.0000        0.0000           100.00%
+      0     0        0.0000    66       28.0000        0.0000      131  100.00%
+      0     0        0.0000    66       28.0000   ZeroHalf: 1      135  100.00%
+*     0+    0                           22.0000        0.0000           100.00%
+      0     0        0.0000    66       22.0000      Cuts: 66      164  100.00%
+      0     0        0.0000    66       22.0000  ZeroHalf: 33      182  100.00%
+      0     0        0.0000    66       22.0000  ZeroHalf: 63      220  100.00%
+      0     2        0.0000    24       22.0000        0.0000      220  100.00%
+Elapsed time = 3.53 sec. (206.75 ticks, tree = 0.02 MB, solutions = 3)
+*  5466+ 3832                           14.0000        0.0000           100.00%
+
+Performing restart 1
+
+Repeating presolve.
+Tried aggregator 1 time.
+MIP Presolve eliminated 433 rows and 557 columns.
+MIP Presolve modified 118 coefficients.
+Reduced MIP has 755 rows, 821 columns, and 2544 nonzeros.
+Reduced MIP has 821 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (2.33 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 755 rows, 821 columns, and 2544 nonzeros.
+Reduced MIP has 821 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (2.19 ticks)
+Represolve time = 0.03 sec. (13.97 ticks)
+   6343     0        0.0000    64       14.0000   ZeroHalf: 2    35394  100.00%
+   6343     0        0.0000    64       14.0000      Cuts: 58    35429  100.00%
+   6343     2        0.0000    22       14.0000        0.0000    35429  100.00%
+  13153  3366        6.0000    61       14.0000        0.0000   107975  100.00%
+  22105  5813        cutoff             14.0000        0.0000   258515  100.00%
+  31154  6734        6.0000    55       14.0000        0.0000   433439  100.00%
+  39126  6578        cutoff             14.0000        0.0000   603330  100.00%
+  47784  2558        cutoff             14.0000        4.0000   808393   71.43%
+
+Zero-half cuts applied:  61
+Gomory fractional cuts applied:  15
+
+Root node processing (before b&c):
+  Real time             =    3.50 sec. (207.08 ticks)
+Parallel b&c, 24 threads:
+  Real time             =   38.33 sec. (1577.80 ticks)
+  Sync time (average)   =   12.25 sec.
+  Wait time (average)   =    0.01 sec.
+                          ------------
+Total (root+branch&cut) =   41.83 sec. (1784.88 ticks)
+Solution status: Optimal
+Optimal value: 14
+
+xo   xo
+oo   oo
+xo   xo
+oo   oo
+xo   ox
+--- ---
+xoo oxo
+ooo ooo
+oxo oox
+ooo  oo
+xoo oox
+ooo ooo
+xoo oxo
+ooo ooo
+xoo oox
+ooo ooo
+xoo oox
+ooo ooo
+oxo oox
+ooo ooo
+xoo oox
+    ooo
+ oo ox 
+xoo ooo
+ooo oxo
+xoo ooo
+ooo oox
+xxo ooo
+ooo oox
+oxo ooo
+ooo oox
+xoo ooo
+ooo oox
+xoo ooo
+ooo oox
+xoo    
+

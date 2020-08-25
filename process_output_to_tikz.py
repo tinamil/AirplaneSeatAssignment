@@ -1,7 +1,7 @@
 from pathlib import Path
 import re
 
-type_vals = ['1/', '2/', 'graph_data/']
+type_vals = ['graph_data/noncoughing']
 for type_val in type_vals:
     directory = "logs/" + type_val
     output = 'tikz/' + type_val
@@ -11,7 +11,8 @@ for type_val in type_vals:
     for path in Path(directory).rglob('*.txt'):
         print(path.absolute())
         with open(path) as f:
-            with open(output + path.name, 'w') as out:
+            Path(output + str(path.parent)).mkdir(parents=True, exist_ok=True)
+            with open(output + str(path), 'w') as out:
                 out.write('\\begin{tikzpicture}\n')
                 y_val = 0.0
                 begin_graph = False
