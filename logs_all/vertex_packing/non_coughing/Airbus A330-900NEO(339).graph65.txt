@@ -1,0 +1,92 @@
+Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de2ae
+CPXPARAM_ClockType                               1
+CPXPARAM_TimeLimit                               21600
+CPXPARAM_WorkMem                                 102400
+Tried aggregator 1 time.
+MIP Presolve eliminated 156859 rows and 76835 columns.
+Reduced MIP has 1064 rows, 1344 columns, and 3470 nonzeros.
+Reduced MIP has 1344 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.05 sec. (76.21 ticks)
+Found incumbent of value 26640.000000 after 0.06 sec. (87.44 ticks)
+Probing time = 0.00 sec. (0.25 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 1064 rows, 1344 columns, and 3470 nonzeros.
+Reduced MIP has 1344 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (3.72 ticks)
+Probing time = 0.00 sec. (0.25 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 24 threads.
+Root relaxation solution time = 0.09 sec. (2.32 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                        26640.0000        0.0000           100.00%
+*     0+    0                          180.0000        0.0000           100.00%
+      0     0        0.0000    98      180.0000        0.0000      138  100.00%
+*     0+    0                            0.0000        0.0000             0.00%
+      0     0        cutoff              0.0000        0.0000      138    0.00%
+Elapsed time = 0.25 sec. (134.89 ticks, tree = 0.01 MB, solutions = 3)
+
+Root node processing (before b&c):
+  Real time             =    0.25 sec. (138.07 ticks)
+Parallel b&c, 24 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.25 sec. (138.07 ticks)
+Solution status: Optimal
+Optimal value: 0
+
+ o  o o x 
+x  x o   o
+ o  o o x 
+x  x o   o
+ o  o x o 
+x  x o   x
+ o  o x o 
+x  
+-- ---- --
+
+-- ---- --
+oo oxo oo
+xo ooo ox
+oo oxo oo
+ox ooo ox
+-- ---- --
+xo xooo xo
+oo oooo oo
+xo oooo ox
+oo ooxo oo
+xo oooo xo
+oo xooo oo
+oo ooox ox
+ox oooo oo
+oo oxoo ox
+xo oooo oo
+oo xoox ox
+xo oooo oo
+
+
+
+oo ooox ox
+xo xooo oo
+oo ooox oo
+xo oooo ox
+oo oxoo oo
+xo oooo ox
+oo xoox oo
+xo oooo ox
+oo xoox oo
+xo oooo ox
+oo oxoo oo
+ox oooo ox
+oo ooxo oo
+xo ooo ox 
+oo xoo oo 
+xo ooo ox 
+   xoo    
+

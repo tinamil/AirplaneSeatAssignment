@@ -1,0 +1,126 @@
+Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de2ae
+CPXPARAM_ClockType                               1
+CPXPARAM_TimeLimit                               21600
+CPXPARAM_WorkMem                                 102400
+Tried aggregator 1 time.
+MIP Presolve eliminated 156859 rows and 76835 columns.
+Reduced MIP has 1064 rows, 1344 columns, and 3470 nonzeros.
+Reduced MIP has 1344 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.06 sec. (76.21 ticks)
+Found incumbent of value 120420.000000 after 0.08 sec. (87.57 ticks)
+Probing time = 0.00 sec. (0.25 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 1064 rows, 1344 columns, and 3470 nonzeros.
+Reduced MIP has 1344 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (3.72 ticks)
+Probing time = 0.08 sec. (0.25 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 24 threads.
+Root relaxation solution time = 0.08 sec. (20.89 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                       120420.0000        0.0000           100.00%
+*     0+    0                       118980.0000        0.0000           100.00%
+*     0+    0                       117000.0000        0.0000           100.00%
+*     0+    0                       114300.0000        0.0000           100.00%
+*     0+    0                       112320.0000        0.0000           100.00%
+*     0+    0                        61020.0000        0.0000           100.00%
+      0     0    37980.0000   378    61020.0000    37980.0000     1012   37.76%
+*     0+    0                        60840.0000    37980.0000            37.57%
+      0     0    43380.0000   378    60840.0000     Cuts: 274     1525   28.70%
+      0     0    45945.0000   378    60840.0000     Cuts: 219     1809   24.48%
+      0     0    47823.7500   378    60840.0000 ZeroHalf: 221     2157   21.39%
+*     0+    0                        57600.0000    47823.7500            16.97%
+      0     0    49395.0000   378    57600.0000 ZeroHalf: 282     2507   14.24%
+      0     0    50611.2500   378    57600.0000 ZeroHalf: 244     3067   12.13%
+*     0+    0                        57060.0000    50611.2500            11.30%
+      0     0    51813.5179   378    57060.0000     Cuts: 240     3598    9.19%
+      0     0    52454.6834   378    57060.0000 ZeroHalf: 219     3910    8.07%
+      0     0    52842.3577   378    57060.0000     Cuts: 251     4461    7.39%
+      0     0    53595.6032   378    57060.0000     Cuts: 287     4764    6.07%
+*     0+    0                        55440.0000    53595.6032             3.33%
+      0     0    53732.4672   378    55440.0000  ZeroHalf: 79     4900    3.08%
+*     0+    0                        54540.0000    53732.4672             1.48%
+      0     0    53844.8276   378    54540.0000  ZeroHalf: 39     4991    1.27%
+      0     0    53866.2009   378    54540.0000      Cuts: 40     5058    1.24%
+      0     0    53878.0353   378    54540.0000  ZeroHalf: 12     5105    1.21%
+      0     0    53892.3561   378    54540.0000  ZeroHalf: 19     5206    1.19%
+      0     0    53899.4517   378    54540.0000  ZeroHalf: 14     5264    1.17%
+      0     0    53908.2785   378    54540.0000  ZeroHalf: 26     5327    1.16%
+      0     0    53916.9956   378    54540.0000  ZeroHalf: 13     5415    1.14%
+*     0+    0                        54360.0000    53916.9956             0.81%
+      0     0    53929.9716   378    54360.0000  ZeroHalf: 21     5508    0.79%
+      0     0    53935.5078   378    54360.0000  ZeroHalf: 23     5551    0.78%
+      0     0    53944.4315   378    54360.0000  ZeroHalf: 34     5620    0.76%
+      0     2    53944.4315   303    54360.0000    53944.4315     5620    0.76%
+Elapsed time = 21.19 sec. (987.15 ticks, tree = 0.02 MB, solutions = 12)
+*     9     3      integral     0    54180.0000    53972.4415     5890    0.38%
+
+Zero-half cuts applied:  528
+Lift and project cuts applied:  1
+Gomory fractional cuts applied:  23
+
+Root node processing (before b&c):
+  Real time             =   21.14 sec. (993.73 ticks)
+Parallel b&c, 24 threads:
+  Real time             =    5.19 sec. (80.81 ticks)
+  Sync time (average)   =    4.65 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   26.33 sec. (1074.53 ticks)
+Solution status: Optimal
+Optimal value: 54180
+
+ x  x x x 
+x  x o   x
+ x  x x x 
+x  o x   x
+ x  x x x 
+x  x o   x
+ x  x x x 
+x  
+-- ---- --
+
+-- ---- --
+xx xxo xx
+xo oxo xx
+xo oxo ox
+xx xxx xx
+-- ---- --
+xx xxxx xx
+xo oooo ox
+xx xxxx xx
+xo oooo ox
+xx oxxo xx
+xx oxxo xx
+xo oooo ox
+xx xxxx xx
+xo oooo ox
+xx xxxx xx
+xo oooo ox
+xx xxxx xx
+
+
+
+xx xxxx xx
+xo oooo ox
+xx xxxx xx
+xo oooo ox
+xx xxxx xx
+xo oooo ox
+xx xxxx xx
+xo oooo ox
+xx xxxx xx
+xo oooo ox
+xx xxxx xx
+xo oooo ox
+xx xxxx xx
+xo ooo oo 
+xo xxx xx 
+xx ooo xx 
+   xxx    
+

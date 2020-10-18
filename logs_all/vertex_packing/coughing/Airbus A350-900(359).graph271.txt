@@ -1,0 +1,114 @@
+Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de2ae
+CPXPARAM_ClockType                               1
+CPXPARAM_TimeLimit                               21600
+CPXPARAM_WorkMem                                 102400
+Tried aggregator 1 time.
+MIP Presolve eliminated 185129 rows and 89350 columns.
+Reduced MIP has 2144 rows, 2449 columns, and 6735 nonzeros.
+Reduced MIP has 2449 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.08 sec. (90.98 ticks)
+Found incumbent of value 40714.000000 after 0.09 sec. (105.28 ticks)
+Probing time = 0.00 sec. (0.47 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 2144 rows, 2449 columns, and 6735 nonzeros.
+Reduced MIP has 2449 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (6.07 ticks)
+Probing time = 0.00 sec. (0.47 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 24 threads.
+Root relaxation solution time = 0.31 sec. (80.14 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                        40714.0000        0.0000           100.00%
+*     0+    0                        39674.0000        0.0000           100.00%
+*     0+    0                        38906.0000        0.0000           100.00%
+*     0+    0                        37596.0000        0.0000           100.00%
+      0     0    33145.0000   979    37596.0000    33145.0000     2852   11.84%
+*     0+    0                        37248.0000    33145.0000            11.02%
+      0     0    33260.5000   979    37248.0000      Cuts: 94     2955   10.71%
+      0     0    33335.8000   979    37248.0000      Cuts: 75     3048   10.50%
+      0     0    33378.4444   979    37248.0000  ZeroHalf: 75     3140   10.39%
+      0     0    33420.6667   979    37248.0000 ZeroHalf: 145     3253   10.28%
+      0     0    33447.9667   979    37248.0000  ZeroHalf: 91     3334   10.20%
+      0     0    33458.5000   979    37248.0000     Cuts: 126     3410   10.17%
+      0     0    33473.9167   979    37248.0000 ZeroHalf: 103     3511   10.13%
+      0     0    33487.0000   979    37248.0000 ZeroHalf: 136     3615   10.10%
+      0     0    33498.3444   979    37248.0000 ZeroHalf: 123     3708   10.07%
+*     0+    0                        34726.0000    33498.3444             3.54%
+*     0+    0                        33592.0000    33498.3444             0.28%
+      0     0    33504.7159   979    33592.0000 ZeroHalf: 139     3795    0.26%
+*     0+    0                        33520.0000    33504.7159             0.05%
+      0     0    33506.2000   979    33520.0000  ZeroHalf: 43     3873    0.04%
+      0     0    33507.5000   979    33520.0000  ZeroHalf: 12     3880    0.04%
+      0     0    33508.0000   979    33520.0000  ZeroHalf: 15     3901    0.04%
+      0     0    33508.7939   979    33520.0000  ZeroHalf: 26     3935    0.03%
+      0     2    33508.7939   375    33520.0000    33510.0952     3935    0.03%
+Elapsed time = 8.70 sec. (629.82 ticks, tree = 0.02 MB, solutions = 8)
+
+Zero-half cuts applied:  223
+Gomory fractional cuts applied:  8
+
+Root node processing (before b&c):
+  Real time             =    8.64 sec. (633.69 ticks)
+Parallel b&c, 24 threads:
+  Real time             =    0.28 sec. (35.76 ticks)
+  Sync time (average)   =    0.15 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    8.92 sec. (669.46 ticks)
+Solution status: Optimal
+Optimal value: 33520
+
+    x x   
+ x x x  x 
+x   x x  x 
+ x x x  x 
+x   x x  x 
+ x x x  x 
+x   x x  x 
+ x x x  x 
+    x x     
+-- ---- --
+xx xxxx xx
+xx xoox xx
+xx xxxx xx
+xx xoox xx
+xx xxxx xx
+xx xxxx xx
+
+--- --- ---
+xxx xxx xxx
+xxx ooo xxx
+xxx xxx xxx
+xxx xxx xxx
+xxx oox xxx
+xxx xxx xxx
+xxx ooo xxx
+xxx xxx xxx
+xxx ooo xxx
+xxx xxx xxx
+
+--- --- ---
+
+ xx xxx xx
+xxx xoo xxx
+xxx xxx xxx
+xxx ooo xxx
+xxx xxx xxx
+xxx ooo xxx
+xxx xxx xxx
+xxx ooo xxx
+xxx xxx xxx
+xxx ooo xxx
+xxx xxx xxx
+xxx ooo xxx
+xxx xxx xxx
+xxx ooo xxx
+xxx xxx xxx
+    xxx
+
+

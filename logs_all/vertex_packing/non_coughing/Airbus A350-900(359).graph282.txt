@@ -1,0 +1,99 @@
+Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de2ae
+CPXPARAM_ClockType                               1
+CPXPARAM_TimeLimit                               21600
+CPXPARAM_WorkMem                                 102400
+Tried aggregator 1 time.
+MIP Presolve eliminated 186039 rows and 91170 columns.
+Reduced MIP has 1234 rows, 1539 columns, and 4005 nonzeros.
+Reduced MIP has 1539 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.08 sec. (90.28 ticks)
+Found incumbent of value 201780.000000 after 0.08 sec. (103.81 ticks)
+Probing time = 0.00 sec. (0.29 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 1234 rows, 1539 columns, and 4005 nonzeros.
+Reduced MIP has 1539 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (7.90 ticks)
+Probing time = 0.00 sec. (0.29 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 24 threads.
+Root relaxation solution time = 0.13 sec. (16.66 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                       201780.0000        0.0000           100.00%
+*     0+    0                       198900.0000        0.0000           100.00%
+*     0+    0                       195120.0000        0.0000           100.00%
+*     0+    0                       192240.0000        0.0000           100.00%
+*     0+    0                       190080.0000        0.0000           100.00%
+      0     0   174420.0000   164   190080.0000   174420.0000     1553    8.24%
+*     0+    0                       174420.0000   174420.0000             0.00%
+      0     0        cutoff         174420.0000   174420.0000     1582    0.00%
+Elapsed time = 0.64 sec. (172.23 ticks, tree = 0.01 MB, solutions = 6)
+
+Zero-half cuts applied:  12
+Lift and project cuts applied:  1
+Gomory fractional cuts applied:  2
+
+Root node processing (before b&c):
+  Real time             =    0.66 sec. (177.88 ticks)
+Parallel b&c, 24 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.66 sec. (177.88 ticks)
+Solution status: Optimal
+Optimal value: 174420
+
+    x x   
+ x x x  x 
+x   x x  x 
+ x x x  x 
+x   x x  x 
+ x x x  x 
+x   x x  x 
+ x x x  x 
+    x x     
+-- ---- --
+xx xxxx xx
+xx oxxo xx
+xx xxxx xx
+xx oxxo xx
+xx xxxx xx
+xx xxxx xx
+
+--- --- ---
+xxx xxx xxx
+xxx oxx oxx
+xxx xxx xxx
+xxo xxo xxx
+xxx xxx xxx
+xxo xxo xxx
+xxx xxx xxx
+xxx xxo xxx
+xxo xxx xxx
+xxx xxx xxx
+
+--- --- ---
+
+ xx xxx xx
+xxx oxx xxx
+xxx xxx oxx
+xxo xxx xxx
+xxx xxx oxx
+xxo xxx xxx
+xxx xxx xxx
+xxx xxx oxx
+xxx oxx xxx
+xxx xxx oxx
+xxo xxx xxx
+xxx xxo xxx
+xxo xxx xxx
+xxx xxx oxx
+xxx xxx xxx
+    xxx
+
+

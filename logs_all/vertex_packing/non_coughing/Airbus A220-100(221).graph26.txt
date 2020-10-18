@@ -1,0 +1,104 @@
+Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de2ae
+CPXPARAM_ClockType                               1
+CPXPARAM_TimeLimit                               21600
+CPXPARAM_WorkMem                                 102400
+Tried aggregator 1 time.
+MIP Presolve eliminated 23370 rows and 11097 columns.
+Reduced MIP has 393 rows, 501 columns, and 1285 nonzeros.
+Reduced MIP has 501 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (11.93 ticks)
+Found incumbent of value 11160.000000 after 0.00 sec. (13.80 ticks)
+Probing time = 0.00 sec. (0.09 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 393 rows, 501 columns, and 1285 nonzeros.
+Reduced MIP has 501 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (1.50 ticks)
+Probing time = 0.00 sec. (0.09 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 24 threads.
+Root relaxation solution time = 0.00 sec. (0.84 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                        11160.0000        0.0000           100.00%
+*     0+    0                          360.0000        0.0000           100.00%
+      0     0        0.0000    50      360.0000        0.0000       70  100.00%
+      0     0        0.0000    50      360.0000   ZeroHalf: 6       73  100.00%
+      0     0        0.0000    50      360.0000      Cuts: 18       81  100.00%
+      0     2        0.0000    12      360.0000        0.0000       81  100.00%
+Elapsed time = 1.22 sec. (49.14 ticks, tree = 0.02 MB, solutions = 2)
+
+Performing restart 1
+
+Repeating presolve.
+Tried aggregator 1 time.
+Reduced MIP has 393 rows, 501 columns, and 1285 nonzeros.
+Reduced MIP has 501 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (0.75 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 393 rows, 501 columns, and 1285 nonzeros.
+Reduced MIP has 501 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (1.52 ticks)
+Represolve time = 0.02 sec. (8.58 ticks)
+  13483     0        0.0000    44      360.0000   ZeroHalf: 3    87077  100.00%
+  13483     0        0.0000    44      360.0000      Cuts: 43    87095  100.00%
+  13483     0        0.0000    44      360.0000       Cuts: 4    87103  100.00%
+  13483     0        0.0000    44      360.0000      Cuts: 41    87136  100.00%
+  13483     0        0.0000    44      360.0000       Cuts: 5    87150  100.00%
+  13483     0        0.0000    44      360.0000      Cuts: 28    87176  100.00%
+  13483     2        0.0000    19      360.0000        0.0000    87176  100.00%
+  28837  3892        0.0000    31      360.0000        0.0000   190197  100.00%
+  50050  7769        0.0000    36      360.0000        0.0000   352840  100.00%
+  67109 10107        cutoff            360.0000        0.0000   503536  100.00%
+  87466 12549      120.0000    28      360.0000        0.0000   665747  100.00%
+ 108650 15605        0.0000    32      360.0000        0.0000   844547  100.00%
+ 129139 18524        0.0000    43      360.0000        0.0000  1007058  100.00%
+ 142110 20752        cutoff            360.0000        0.0000  1150054  100.00%
+ 162452 23959       60.0000    27      360.0000        0.0000  1336214  100.00%
+ 239334 24492        cutoff            360.0000       48.0000  2009034   86.67%
+Elapsed time = 89.36 sec. (3186.20 ticks, tree = 9.26 MB, solutions = 2)
+
+Zero-half cuts applied:  111
+Lift and project cuts applied:  2
+Gomory fractional cuts applied:  12
+
+Root node processing (before b&c):
+  Real time             =    1.20 sec. (49.27 ticks)
+Parallel b&c, 24 threads:
+  Real time             =  101.80 sec. (3553.34 ticks)
+  Sync time (average)   =   37.33 sec.
+  Wait time (average)   =    0.02 sec.
+                          ------------
+Total (root+branch&cut) =  103.00 sec. (3602.61 ticks)
+Solution status: Optimal
+Optimal value: 360
+
+--    
+ox  ox
+oo  oo
+ox  ox
+--  --
+ox ooo
+oo oox
+ox ooo
+oo oxx
+ox ooo
+oo ox 
+ox ooo
+oo oox
+ox ooo
+oo oox
+ox ooo
+oo oox
+ox ooo
+oo oxx
+ox ooo
+oo oox
+ox ooo
+oo oox
+ox ooo
+   oox
+

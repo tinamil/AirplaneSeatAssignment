@@ -7,7 +7,7 @@ optimality_pattern = re.compile(r"Solution status: (\w+)", re.IGNORECASE)
 time_pattern = re.compile(r"Total \(root\+branch&cut\) =\s*([\d\.]+) sec.+", re.IGNORECASE)
 risk_pattern = re.compile(r"Optimal value:\s+([\d\.]+)", re.IGNORECASE)
 
-directory = "logs/graph_data/noncoughing/"
+directory = "logs_all/risk_minimization/coughing/"
 output = 'processed_data/'
 pattern = re.compile(r'[xo]+')
 radius = 0.125

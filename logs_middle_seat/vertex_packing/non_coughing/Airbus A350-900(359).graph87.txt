@@ -1,0 +1,116 @@
+Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de2ae
+CPXPARAM_ClockType                               1
+CPXPARAM_TimeLimit                               21600
+CPXPARAM_WorkMem                                 102400
+Tried aggregator 1 time.
+MIP Presolve eliminated 84301 rows and 41294 columns.
+Reduced MIP has 572 rows, 777 columns, and 1919 nonzeros.
+Reduced MIP has 777 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.03 sec. (41.05 ticks)
+Found incumbent of value 30240.000000 after 0.05 sec. (47.13 ticks)
+Probing time = 0.00 sec. (0.14 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 572 rows, 777 columns, and 1919 nonzeros.
+Reduced MIP has 777 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (1.79 ticks)
+Probing time = 0.00 sec. (0.14 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 24 threads.
+Root relaxation solution time = 0.06 sec. (1.69 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                        30240.0000        0.0000           100.00%
+*     0+    0                         5040.0000        0.0000           100.00%
+      0     0        0.0000   140     5040.0000        0.0000      177  100.00%
+      0     0        0.0000   140     5040.0000      Cuts: 67      235  100.00%
+      0     0      735.0000   140     5040.0000     Cuts: 161      408   85.42%
+      0     0     1660.0000   140     5040.0000     Cuts: 168      617   67.06%
+      0     0     2503.0000   140     5040.0000 ZeroHalf: 144      821   50.34%
+      0     0     2751.9231   140     5040.0000 ZeroHalf: 134      919   45.40%
+      0     0     3114.0000   140     5040.0000 ZeroHalf: 103     1039   38.21%
+      0     0     3287.1176   140     5040.0000      Cuts: 98     1112   34.78%
+      0     0     3409.5652   140     5040.0000  ZeroHalf: 80     1207   32.35%
+      0     0     3509.1000   140     5040.0000  ZeroHalf: 82     1286   30.37%
+      0     0     3612.0499   140     5040.0000      Cuts: 83     1354   28.33%
+      0     0     3675.0000   140     5040.0000  ZeroHalf: 73     1459   27.08%
+*     0+    0                         4860.0000     3675.0000            24.38%
+      0     0     3730.0000   140     4860.0000  ZeroHalf: 57     1535   23.25%
+      0     0     3783.2143   140     4860.0000      Cuts: 81     1604   22.16%
+      0     0     3909.0000   140     4860.0000      Cuts: 59     1671   19.57%
+      0     0     3960.0000   140     4860.0000  ZeroHalf: 46     1721   18.52%
+      0     0     4020.0000   140     4860.0000  ZeroHalf: 43     1746   17.28%
+*     0+    0                         4680.0000     4020.0000            14.10%
+      0     0     4080.0000   140     4680.0000      Cuts: 28     1768   12.82%
+      0     0     4080.0000   140     4680.0000  ZeroHalf: 30     1783   12.82%
+      0     0     4080.0000   140     4680.0000   ZeroHalf: 2     1785   12.82%
+*     0+    0                         4140.0000     4080.0000             1.45%
+      0     0        cutoff           4140.0000     4080.0000     1785    1.45%
+Elapsed time = 10.80 sec. (266.74 ticks, tree = 0.01 MB, solutions = 5)
+
+Zero-half cuts applied:  262
+Gomory fractional cuts applied:  10
+
+Root node processing (before b&c):
+  Real time             =   10.80 sec. (269.02 ticks)
+Parallel b&c, 24 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   10.80 sec. (269.02 ticks)
+Solution status: Optimal
+Optimal value: 4140
+
+    o x   
+ o x o  o 
+x   o x  x 
+ o x o  o 
+x   o x  x 
+ o x o  o 
+x   o x  x 
+ o x o  o 
+    o x     
+-- ---- --
+xo xoox ox
+oo xooo oo
+xo ooox ox
+xo xooo oo
+oo ooox ox
+xo xoox ox
+
+--- --- ---
+xoo xoo xox
+xoo ooo ooo
+ooo xoo xox
+xoo xoo ooo
+ooo ooo oox
+xox oox oox
+ooo ooo ooo
+xox oox oox
+ooo ooo ooo
+xoo xoo xox
+
+--- --- ---
+
+ ox xoo xo
+ooo ooo ooo
+xox oox oox
+ooo ooo ooo
+xoo xoo xox
+ooo ooo ooo
+xox oox oox
+ooo ooo ooo
+xoo xoo xox
+xoo ooo ooo
+xoo xoo xox
+ooo ooo ooo
+xoo xox oox
+ooo ooo ooo
+xox oox oox
+    oox
+
+

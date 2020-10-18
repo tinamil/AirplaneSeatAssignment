@@ -1,9 +1,9 @@
 from pathlib import Path
 import re
 
-type_vals = ['graph_data/noncoughing']
+type_vals = ['logs_middle_seat/vertex_packing/non_coughing']
 for type_val in type_vals:
-    directory = "logs/" + type_val
+    directory = type_val
     output = 'tikz/' + type_val
     pattern = re.compile(r'[xo]+')
     radius = 0.125

@@ -1,0 +1,123 @@
+Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de2ae
+CPXPARAM_ClockType                               1
+CPXPARAM_TimeLimit                               21600
+CPXPARAM_WorkMem                                 102400
+Tried aggregator 1 time.
+MIP Presolve eliminated 31909 rows and 15431 columns.
+Reduced MIP has 350 rows, 476 columns, and 1174 nonzeros.
+Reduced MIP has 476 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (15.89 ticks)
+Found incumbent of value 4664.000000 after 0.02 sec. (18.31 ticks)
+Probing time = 0.00 sec. (0.09 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 350 rows, 476 columns, and 1174 nonzeros.
+Reduced MIP has 476 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (1.05 ticks)
+Probing time = 0.00 sec. (0.09 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 24 threads.
+Root relaxation solution time = 0.00 sec. (0.91 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                         4664.0000        0.0000           100.00%
+*     0+    0                          188.0000        0.0000           100.00%
+      0     0        0.0000    74      188.0000        0.0000       95  100.00%
+      0     0        0.0000    74      188.0000      Cuts: 10      108  100.00%
+      0     0        0.0000    74      188.0000       Cuts: 9      117  100.00%
+      0     0        0.0000    74      188.0000      Cuts: 63      174  100.00%
+*     0+    0                           80.0000        0.0000           100.00%
+      0     2        0.0000    64       80.0000        0.0000      174  100.00%
+Elapsed time = 2.73 sec. (63.45 ticks, tree = 0.02 MB, solutions = 3)
+
+Performing restart 1
+
+Repeating presolve.
+Tried aggregator 1 time.
+MIP Presolve eliminated 6 rows and 114 columns.
+Reduced MIP has 344 rows, 362 columns, and 1048 nonzeros.
+Reduced MIP has 362 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.83 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 344 rows, 362 columns, and 1048 nonzeros.
+Reduced MIP has 362 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (1.10 ticks)
+Represolve time = 0.02 sec. (6.42 ticks)
+   6404     0       46.6667   100       80.0000     Cuts: 105    41712   41.67%
+   6404     0       60.0000   100       80.0000      Cuts: 75    41768   25.00%
+   6404     0       65.0000   100       80.0000      Cuts: 35    41825   18.75%
+   6404     0       74.0000   100       80.0000      Cuts: 32    41849    7.50%
+
+Repeating presolve.
+Tried aggregator 1 time.
+MIP Presolve eliminated 89 rows and 106 columns.
+MIP Presolve modified 27 coefficients.
+Reduced MIP has 255 rows, 256 columns, and 810 nonzeros.
+Reduced MIP has 256 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.81 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 255 rows, 256 columns, and 810 nonzeros.
+Reduced MIP has 256 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.80 ticks)
+Represolve time = 0.02 sec. (5.79 ticks)
+*  6404     0      integral     0       80.0000       74.0000    42018    7.50%
+
+Zero-half cuts applied:  97
+Lift and project cuts applied:  3
+Gomory fractional cuts applied:  23
+
+Root node processing (before b&c):
+  Real time             =    2.39 sec. (63.74 ticks)
+Parallel b&c, 24 threads:
+  Real time             =    7.70 sec. (206.90 ticks)
+  Sync time (average)   =    1.24 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   10.09 sec. (270.64 ticks)
+Solution status: Optimal
+Optimal value: 80
+
+    ox    
+x   oo   x
+o   oo   o
+x   ox   x
+o   oo   o
+x   ox   x
+-- ---- --
+
+-- ---- --
+x   ox   x
+o   oo   o
+x   ox   x
+-- ---- --
+xo ooox ox
+oo oooo oo
+xo ooox oo
+oo oooo oo
+xo oooo ox
+oo oooo oo
+xo oooo ox
+oo xooo oo
+oo oooo ox
+xo xooo oo
+oo oooo ox
+xo xooo oo
+-- ---- --
+xo ooox ox
+oo oooo oo
+oo ooox oo
+xo oooo oo
+oo oooo ox
+xo oooo oo
+oo oooo oo
+oo xooo ox
+oo oooo oo
+xo ooo  ox
+oo ooo oo 
+oo xoo ox 
+oo ooo oo 
+xo     ox 
+

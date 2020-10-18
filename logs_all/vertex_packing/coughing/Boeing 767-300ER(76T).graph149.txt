@@ -1,0 +1,117 @@
+Version identifier: 12.10.0.0 | 2019-11-26 | 843d4de2ae
+CPXPARAM_ClockType                               1
+CPXPARAM_TimeLimit                               21600
+CPXPARAM_WorkMem                                 102400
+Tried aggregator 1 time.
+MIP Presolve eliminated 87684 rows and 41805 columns.
+Reduced MIP has 1359 rows, 1569 columns, and 4285 nonzeros.
+Reduced MIP has 1569 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.05 sec. (43.95 ticks)
+Found incumbent of value 20488.000000 after 0.05 sec. (50.99 ticks)
+Probing time = 0.00 sec. (0.30 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 1359 rows, 1569 columns, and 4285 nonzeros.
+Reduced MIP has 1569 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (3.64 ticks)
+Probing time = 0.00 sec. (0.30 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 24 threads.
+Root relaxation solution time = 0.33 sec. (55.17 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                        20488.0000        0.0000           100.00%
+*     0+    0                        19152.0000        0.0000           100.00%
+*     0+    0                        18522.0000        0.0000           100.00%
+*     0+    0                        17816.0000        0.0000           100.00%
+*     0+    0                        17170.0000        0.0000           100.00%
+*     0+    0                        16580.0000        0.0000           100.00%
+*     0+    0                        16116.0000        0.0000           100.00%
+*     0+    0                        15576.0000        0.0000           100.00%
+*     0+    0                        13868.0000        0.0000           100.00%
+*     0+    0                        13350.0000        0.0000           100.00%
+      0     0     9229.0000   449    13350.0000     9229.0000     1717   30.87%
+*     0+    0                        13312.0000     9229.0000            30.67%
+      0     0     9408.0000   449    13312.0000     Cuts: 286     1946   29.33%
+      0     0     9543.0000   449    13312.0000     Cuts: 251     2235   28.31%
+      0     0     9641.5200   449    13312.0000 ZeroHalf: 285     2606   27.57%
+*     0+    0                        11072.0000     9641.5200            12.92%
+      0     0     9728.5000   449    11072.0000     Cuts: 275     2845   12.13%
+      0     0     9804.2500   449    11072.0000 ZeroHalf: 233     3096   11.45%
+*     0+    0                        10690.0000     9804.2500             8.29%
+      0     0     9880.8000   449    10690.0000 ZeroHalf: 269     3446    7.57%
+      0     0     9904.6349   449    10690.0000 ZeroHalf: 228     3690    7.35%
+*     0+    0                        10572.0000     9904.6349             6.31%
+      0     0     9945.7000   449    10572.0000 ZeroHalf: 222     4003    5.92%
+      0     0     9993.5918   449    10572.0000 ZeroHalf: 244     4343    5.47%
+      0     0    10028.8629   449    10572.0000 ZeroHalf: 226     4738    5.14%
+      0     0    10048.8935   449    10572.0000 ZeroHalf: 277     5047    4.95%
+*     0+    0                        10436.0000    10048.8935             3.71%
+      0     0    10071.1089   449    10436.0000     Cuts: 189     5371    3.50%
+      0     0    10088.5806   449    10436.0000     Cuts: 245     5683    3.33%
+      0     0    10102.7263   449    10436.0000 ZeroHalf: 177     5935    3.19%
+      0     0    10111.2056   449    10436.0000     Cuts: 120     6150    3.11%
+      0     0    10116.6963   449    10436.0000      Cuts: 89     6384    3.06%
+      0     0    10117.9811   449    10436.0000  ZeroHalf: 19     6434    3.05%
+*     0+    0                        10360.0000    10117.9811             2.34%
+      0     0    10122.6654   449    10360.0000  ZeroHalf: 68     6639    2.29%
+*     0     0      integral     0    10126.0000  ZeroHalf: 73     6801    0.00%
+      0     0        cutoff          10126.0000    10126.0000     6801    0.00%
+Elapsed time = 21.61 sec. (1074.69 ticks, tree = 0.01 MB, solutions = 17)
+
+Zero-half cuts applied:  603
+Gomory fractional cuts applied:  9
+
+Root node processing (before b&c):
+  Real time             =   21.63 sec. (1080.68 ticks)
+Parallel b&c, 24 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =   21.63 sec. (1080.68 ticks)
+Solution status: Optimal
+Optimal value: 10126
+
+x  xx   x
+ x  ox x
+x  xx   x
+ x  ox x
+x  xx   x
+ x  ox x
+x  xx   x
+ x  ox x
+x  xx   x
+    
+    
+   xxx 
+xx xxx xx
+xo ooo ox
+xx xxx xx
+xo     xx
+xx     ox
+xx xxx xx
+xo ooo ox
+xx xxx xx
+xo ooo ox
+xx xxx xx
+xo ooo ox
+xx xxx xx
+xo ooo ox
+xx xxx xx
+xo ooo oo
+xx xxx xx
+xo ooo ox
+xx xxx xx
+xo ooo ox
+xx xxx xx
+oo ooo oo
+xx xxx xx
+xo ooo ox
+xx xxx xx
+xx ooo xx
+   xxx   
+
