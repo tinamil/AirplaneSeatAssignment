@@ -2,13 +2,15 @@
 
 #include <cstdlib>
 #include <cstring>
+#include <vector>
 
-enum graph_input_type { seat = 'x', wall = '-', space = ' ' };
+enum graph_input_type { seat = 'x', empty = 'o', wall = '-', space = ' ' };
 
 struct Graph
 {
   int** adjacency_matrix;
   int size;
+  std::vector<int> filled_seats;
 };
 
 struct Node

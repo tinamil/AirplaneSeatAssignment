@@ -14,12 +14,12 @@ $stdOutLog = $myLog + 'stdout.log'
 $files = ("Boeing 717-200(717).graph")
 foreach($model_type in $model_types)
 {
-    For ($val=1; $val -lt 250; ++$val)
+    For ($val=110; $val -lt 111; ++$val)
     {
         foreach ($input_file in $files)
         {
     
-            $output_file = $myLog + $input_file + $val + ".txt"
+            $output_file = $myLog + $input_file + $val + "_v2.txt"
             $error_file = $myLog + $input_file + ".err"
             $input_file_name = -join ("`"", $input, $input_file, "`"")
             Write-Output $output_file

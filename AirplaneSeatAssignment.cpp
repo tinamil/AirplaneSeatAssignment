@@ -18,6 +18,8 @@ Graph process_graph(std::vector<std::string> graph_strings, Model model)
   std::vector<std::vector<int>> vertex_indices;
   vertex_indices.resize(graph_strings.size());
 
+  std::vector<int> filled_seats;
+
   int vertex_counter = 0;
   for(size_t row = 0; row < graph_strings.size(); ++row)
   {
@@ -26,8 +28,9 @@ Graph process_graph(std::vector<std::string> graph_strings, Model model)
     for(size_t col = 0; col < graph_strings[row].length(); ++col)
     {
       auto letter = graph_strings[row][col];
-      if(letter == seat)
+      if(letter == seat || letter == empty)
       {
+        if (letter == seat) filled_seats.push_back(vertex_counter);
         vertex_indices[row][col] = vertex_counter++;
       }
     }
@@ -48,7 +51,7 @@ Graph process_graph(std::vector<std::string> graph_strings, Model model)
     {
       char letter = graph_strings[row][col];
       int index1 = vertex_indices[row][col];
-      if(letter == seat)
+      if(letter == seat || letter == empty)
       {
         int max_row_offset = 1;
         int max_col_offset = 4;
@@ -107,7 +110,7 @@ Graph process_graph(std::vector<std::string> graph_strings, Model model)
       }
     }
   }
-  return Graph{ adjacency_matrix, vertex_counter };
+  return Graph{ adjacency_matrix, vertex_counter, filled_seats };
 }
 
 void Display(std::vector<std::string> graph_strings, std::vector<bool> included_seats)
@@ -118,7 +121,7 @@ void Display(std::vector<std::string> graph_strings, std::vector<bool> included_
   {
     for(size_t col = 0; col < graph_strings[row].size(); ++col)
     {
-      if(graph_strings[row][col] == graph_input_type::seat)
+      if(graph_strings[row][col] == graph_input_type::seat || graph_strings[row][col] == graph_input_type::empty)
       {
         if(seat >= included_seats.size()) return;
         if(included_seats[seat++]) std::cout << "x";

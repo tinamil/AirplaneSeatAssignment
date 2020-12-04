@@ -39,6 +39,10 @@ std::vector<bool> CPLEX_Solver::Solve_Vertex_Packing_Risk_Minimization(const Gra
     }
   }
 
+  for (const auto& seat : g.filled_seats) {
+    model.add(assigned_seats[seat] == 1);
+  }
+
   model.add(IloMinimize(env, IloScalProd(shared_seats, edge_costs)));
 
   IloCplex  cplex(model);
