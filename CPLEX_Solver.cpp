@@ -39,7 +39,7 @@ std::vector<bool> CPLEX_Solver::Solve_Vertex_Packing_Risk_Minimization(const Gra
     }
   }
 
-  for (const auto& seat : g.filled_seats) {
+  for(const auto& seat : g.filled_seats) {
     model.add(assigned_seats[seat] == 1);
   }
 
@@ -53,7 +53,14 @@ std::vector<bool> CPLEX_Solver::Solve_Vertex_Packing_Risk_Minimization(const Gra
   std::vector<bool> results;
   for(int i = 0; i < g.size; ++i)
   {
-    results.push_back(cplex.getValue(assigned_seats[i]));
+    int num = (int)round(cplex.getValue(assigned_seats[i]));
+    if(num == 1) {
+      results.push_back(true);
+    }
+    else {
+      if(num != 0) std::cout << i << " " << num << " ERROR: non-zero/non-one seat assignment.\n";
+      results.push_back(false);
+    }
   }
   env.end();
   return results;

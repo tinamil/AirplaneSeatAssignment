@@ -30,7 +30,7 @@ Graph process_graph(std::vector<std::string> graph_strings, Model model)
       auto letter = graph_strings[row][col];
       if(letter == seat || letter == empty)
       {
-        if (letter == seat) filled_seats.push_back(vertex_counter);
+        if(letter == seat) filled_seats.push_back(vertex_counter);
         vertex_indices[row][col] = vertex_counter++;
       }
     }
@@ -110,7 +110,7 @@ Graph process_graph(std::vector<std::string> graph_strings, Model model)
       }
     }
   }
-  return Graph{ adjacency_matrix, vertex_counter, filled_seats };
+  return Graph{adjacency_matrix, vertex_counter, filled_seats};
 }
 
 void Display(std::vector<std::string> graph_strings, std::vector<bool> included_seats)
@@ -219,6 +219,13 @@ int main(int argc, char* argv[])
             solutions = x.Solve_Risk_Constrained_Vertex_Packing(matrix, model_input);
             break;
         }
+        int count = 0;
+        for(const auto& x : solutions) {
+          if(x) count += 1;
+        }
+        if(model_type == 1 && count != model_input) {
+          std::cout << "ERROR: Too many seats assigned.\n";
+        }
         Display(graph_string, solutions);
       }
       else
@@ -226,6 +233,38 @@ int main(int argc, char* argv[])
         std::cerr << "Failed to open " << argv[i];
         break;
       }
+    }
+  }
+  return 0;
+}
+
+int main2(int argc, char* argv[])
+{
+  for(int i = 1; i < argc; ++i)
+  {
+    std::ifstream graph_file(argv[i], std::ios::in);
+    if(graph_file.is_open())
+    {
+      std::vector<std::string> graph_string;
+      for(std::string line; std::getline(graph_file, line); )
+      {
+        graph_string.push_back(line);
+      }
+      auto matrix = process_graph(graph_string, Model::Coughing);
+      int risk = 0;
+      for(int i = 0; i < matrix.filled_seats.size(); ++i) {
+        int i_seat = matrix.filled_seats[i];
+        for(int j = i + 1; j < matrix.filled_seats.size(); ++j) {
+          int j_seat = matrix.filled_seats[j];
+          risk += matrix.adjacency_matrix[i_seat][j_seat] + matrix.adjacency_matrix[j_seat][i_seat];
+        }
+      }
+      std::cout << risk << "\n";
+    }
+    else
+    {
+      std::cerr << "Failed to open " << argv[i];
+      break;
     }
   }
   return 0;
